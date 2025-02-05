@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       
+       .navbar {
+        display: flex;
+        justify-content: space-between; /* Align items to the start and end of the flex container */
+        align-items: center; /* Align items vertically in the center */
+        padding: 10px; /* Optional: Add padding for better spacing */
+        color: white;
+        }
+
+        .navbar :hover{
+            color: white;
+            cursor: pointer;
+        }
+
+        .navbar nav {
+            display: flex; /* Ensure the <nav> element itself becomes a flex container */
+            align-items: center; /* Align items vertically in the center */
+            color: white;
+        }
+
+        .navbar .left-links {
+            margin-right: auto; /* Push these links to the far left */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            padding: 8px 12px;
+            padding-bottom: 0;
+            color: white; /* Optional: Text color */
+        }
+        .zomato{
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 90px;
+            font-style: italic;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .motto{
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        .firstpart{
+            background-image: url(./firstpart_bg.webp);
+            background-size: cover;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: center;
+            margin-right: 0;
+            width: 200px;
+        }
+        select{
+            padding: 10px;
+            /* margin: 5px; */
+            width: 205px;
+            font-size: 20px;
+            border-radius: 4px;
+            height: 60px;
+            border: 1px solid white;
+            color: #757575;
+      }
+
+        .search{
+            text-align: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 5px;
+            margin-right: 0;
+            font-size: 16px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            max-width: 400px;
+            margin: 50px auto;
+            margin-left: 0;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 5px;
+            width: 400px;
+        }
+        .search-container img {
+            width: 24px; /* Adjust image size as needed */
+            margin: 0 10px;
+        }
+        .search-container input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .search-container input[type="text"]::placeholder {
+            color: #757575; /* Placeholder text color */
+        }
+        .searchandcontainer{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+        }
+        #location option img{
+            width: 24px;
+            margin: 0px 10px;
+        }
+        
+        .card1 {
+            width: 500px; /* Set card width */
+            margin-right: 50px; /* Add margin between cards */
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(132, 36, 1, 0.1);
+            overflow: hidden;
+        }
+      
+
+        .card1 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card1 .card-info {
+            padding: 20px;
+            margin: auto;
+        }
+
+        .card1 h3 {
+            margin: 10px;
+            font-size: 25px;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card1 p {
+            color: #666;
+            margin: 10px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        .card2 {
+            width: 500px; /* Set card width */
+            margin-right: 50px; /* Add margin between cards */
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(132, 36, 1, 0.1);
+            overflow: hidden;
+        }
+      
+        .card2 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card2 .card-info {
+            padding: 20px;
+            margin: auto;
+        }
+
+        .card2 h3 {
+            margin: 10px;
+            font-size: 25px;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card2 p {
+            color: #666;
+            margin: 10px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+        .secondpart{
+            display: flex;
+            justify-content: center;
+            margin: 40px;
+            padding: 20px;
+        }
+        .thirdpart{
+            display: flex;
+            justify-content: center;
+            background-color: #FFFBF7;
+        }
+        .img{
+            margin-left: 20px;
+            padding-left: 20px;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .getappext{
+            margin: 20px;
+            padding: 20px;
+        }
+        /* Hide the default checkbox */
+        input[type="checkbox"] {
+            appearance: none; /* Remove default appearance */
+            -webkit-appearance: none; /* For older versions of Safari */
+            -moz-appearance: none; /* For older versions of Firefox */
+            width: 20px; /* Set a width for the new checkbox */
+            height: 20px; /* Set a height for the new checkbox */
+            border: 2px solid rgb(252, 41, 76); /* Add a border */
+            cursor: pointer; /* Change cursor style */
+            position: relative; /* Position relative to label */
+            border-radius: 50%;
+        }
+
+        /* Checked state style */
+        input[type="checkbox"]:checked {
+            background-color: rgb(252, 41, 76); /* Change background color when checked */
+            border-color: rgb(252, 41, 76); /* Change border color when checked */
+        }
+
+        /* Label styling */
+        label {
+            display: inline-block;
+            margin-left: 5px; /* Adjust spacing between checkbox and label*/
+            line-height: 20px; /* Vertically align label with checkbox */
+            cursor: pointer; /* Change cursor style */
+        }
+        .footzomato{
+            color: rgb(0, 0, 0);
+            font-weight: bolder;
+            font-size: 40px;
+            font-style: italic;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+            justify-content: left;
+            padding-left: 40px;
+            margin-left: 40px;
+        }
+        .Selection1{
+            display: flex;
+        }
+        .language form select{
+            height: 45px;
+            width: 150px;
+            margin-top: 10px;
+        }
+        .country form select{
+            height: 45px;
+            width: 150px;
+            margin-top: 10px;
+        }
+
+        .column1 a{
+            color: #757575;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            text-decoration: none;
+            padding: 40px;
+            margin: 40px;
+            line-height: 2;
+        }
+        .column1 a:hover{
+            color: white;
+            cursor: pointer;
+        }
+        .links{
+            display: flex;
+            justify-content: space-around;
+        }
+        .socialmedialink{
+            display: flex;
+            justify-content: center;
+        }
+        .socialmedialink a{
+            padding: 2px;
+            margin: 2px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="firstpart" id="firstpartid">
+        <div class="navbar" id="navbarid">
+            <nav class="left-links">
+                <a class="getapp" href="https://play.google.com/store/apps/details?id=com.application.zomato&hl=en_IN&pli=1">Get The App</a>
+            </nav>
+            <nav>
+                <a href="#">Invester Relation</a>
+                <a href="#">Add Restaurant</a>
+                <a href="#">Log In</a>
+                <a href="#">Sign Up</a>
+            </nav>
+        </div>
+        <h1 class="zomato">zomato</h1>
+        <p class="motto">Discover The Best Food And Drinks</p>
+        <div class="searchandcontainer">
+            <div class="container">
+                <form action="DataBaseURL" method="get">
+                    <select id="location" name="locationid">
+                        <option style="color: #757575; font-size: 16px; " value="" disabled selected class="placeholder"><img src="./icons8-location-48.png" alt="loc.">Location</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Assam">Assam</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bihar">Bihar</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Chhattisgarh">Chhattisgarh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Goa">Goa</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Gujarat">Gujarat</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Haryana">Haryana</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Jharkhand">Jharkhand</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Karnataka">Karnataka</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Kerala">Kerala</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Maharashtra">Maharashtra</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Manipur">Manipur</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Meghalaya">Meghalaya</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Mizoram">Mizoram</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Nagaland">Nagaland</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Odisha">Odisha</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Punjab">Punjab</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Rajasthan">Rajasthan</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Sikkim">Sikkim</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Tamil Nadu">Tamil Nadu</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Telangana">Telangana</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Tripura">Tripura</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Uttarakhand">Uttarakhand</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="West Bengal">West Bengal</option>
+                    </select>
+                </form>
+            </div>
+            <div class="search-container">
+                <hr style="height: 30px; width: 0px; color: black;">
+                <img src="./icons8-search-50.png" alt="Search Icon">
+                <input type="text" placeholder="Search for Restaurant, cuisine or dish">
+            </div>
+        </div>
+    </div>
+    <div class="secondpart" id="secondpartid">
+        <div class="card1">
+            <img src="./card1.jpg" alt="Recipe Image">
+            <div class="card-info1">
+              <h3><a href="#" style="cursor: pointer; text-decoration: none; color: black;">Order Online</a></h3>
+              <p>Stay home and order to your doorstep</p>
+            </div>
+        </div>
+        <div class="card2">
+            <img src="./card2.webp" alt="Recipe Image">
+            <div class="card-info2">
+              <h3><a href="#" style="cursor: pointer; text-decoration: none; color: black;">Dining</a></h3>
+              <p>View the citie's favourite dining venues</p>
+            </div>
+        </div>
+    </div>
+    <div class="thirdpart" id="thirdpartid">
+        <div class="img" id="imgid">
+            <img src="./Screenshot 2024-06-22 115244.png" alt="pic">
+        </div>
+        <div class="getappext" id="getappextid">
+            <h1>Get the zomato app</h1>
+            <p>We will send you a link, open it on your <br> phone to download the app.</p>
+            <label for="myCheckbox">Email</label>
+            <input type="checkbox" id="myCheckbox">
+            <label for="myCheckbox">Phone</label>
+            <input type="checkbox" id="myCheckbox">
+         </div>
+    </div>
+    <div class="fourpart" id="fourpart" style="background-color: rgb(222, 221, 221);">
+        <div class="Selection1" id="selection1">
+            <h1 class="footzomato" style="text-align: left; justify-content: left; font-weight: 900;">zomato&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+            
+            
+            <div class="country" style="justify-content: right; height: 20px;">
+                <form action="DataBaseURL" method="get" style="justify-content: right;">
+                    <select id="country" name="locationid" style="justify-content: right;">
+                        <option style="color: #757575; font-size: 16px; " value="" disabled selected class="placeholder">India</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Meghalaya">Meghalaya</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cabo Verde">Cabo Verde</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Eswatini">Eswatini</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Kosovo">Kosovo</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Micronesia">Micronesia</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="North Korea">North Korea</option>
+                        <option value="North Macedonia">North Macedonia</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau">Palau</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                        <option value="Saint Lucia">Saint Lucia</option>
+                        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="South Sudan">South Sudan</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                    </select>
+                </form>
+            </div>
+            
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            
+            <div class="language" style="justify-content: right; align-items: end;">
+                <form action="DataBaseURL" method="get" style="justify-content: right; align-items: end;">
+                    <select id="language" name="locationid" style="justify-content: right; align-items: end;">
+                        <option style="color: #757575; font-size: 16px; " value="" disabled selected class="placeholder">English</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Meghalaya">Hindi</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Afghanistan">Afghanistan (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Albania">Shqipëri (Albanian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Algeria">الجزائر (Arabic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Andorra">Andorra (Catalan)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Angola">Angola (Portuguese)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Antigua and Barbuda">Antigua and Barbuda (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Argentina">Argentina (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Armenia">Հայաստան (Armenian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Australia">Australia (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Austria">Österreich (German)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Azerbaijan">Azərbaycan (Azerbaijani)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bahamas">Bahamas (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bahrain">البحرين (Arabic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bangladesh">বাংলাদেশ (Bengali)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Barbados">Barbados (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Belarus">Беларусь (Belarusian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Belgium">België (Dutch)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Belize">Belize (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Benin">Bénin (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bhutan">འབྲུག་ཡུལ (Dzongkha)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bolivia">Bolivia (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bosnia and Herzegovina">Bosna i Hercegovina (Bosnian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Botswana">Botswana (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Brazil">Brasil (Portuguese)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Brunei">بروني (Malay)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Bulgaria">България (Bulgarian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Burkina Faso">Burkina Faso (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Burundi">Burundi (Kirundi)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Cabo Verde">Cabo Verde (Portuguese)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Cambodia">កម្ពុជា (Khmer)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Cameroon">Cameroun (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Canada">Canada (English/French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Central African Republic">République centrafricaine (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Chad">Tchad (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Chile">Chile (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="China">中国 (Chinese)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Colombia">Colombia (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Comoros">Comores (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Congo">Congo (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Costa Rica">Costa Rica (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Croatia">Hrvatska (Croatian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Cuba">Cuba (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Cyprus">Κύπρος (Greek)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Czech Republic">Česká republika (Czech)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Denmark">Danmark (Danish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Djibouti">Djibouti (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Dominica">Dominica (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Dominican Republic">República Dominicana (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Ecuador">Ecuador (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Egypt">مصر (Arabic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="El Salvador">El Salvador (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Equatorial Guinea">Guinea Ecuatorial (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Eritrea">ኤርትራ (Tigrinya)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Estonia">Eesti (Estonian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Eswatini">Eswatini (Swati)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Ethiopia">ኢትዮጵያ (Amharic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Fiji">Fiji (English/Fijian/Hindi)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Finland">Suomi (Finnish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="France">France (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Gabon">Gabon (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Gambia">Gambia (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Georgia">საქართველო (Georgian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Germany">Deutschland (German)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Ghana">Ghana (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Greece">Ελλάδα (Greek)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Grenada">Grenada (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Guatemala">Guatemala (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Guinea">Guinée (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Guinea-Bissau">Guiné-Bissau (Portuguese)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Guyana">Guyana (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Haiti">Haïti (French)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Honduras">Honduras (Spanish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Hungary">Magyarország (Hungarian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Iceland">Ísland (Icelandic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="India">भारत (Hindi)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Indonesia">Indonesia (Indonesian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Iran">ایران (Persian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Iraq">العراق (Arabic)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Ireland">Éire (Irish)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Israel">יִשְׂרָאֵל (Hebrew)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Italy">Italia (Italian)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Jamaica">Jamaica (English)</option>
+                        <option style="font-family: 'Times New Roman', Times, serif;" value="Japan">日本 (Japanese)</option>
+                    </select>
+                </form>
+            </div>
+        
+        </div>
+
+            <br><br>
+
+        <div class="links" id="links">
+            <div class="column1" id="column1">
+                <h1 style="font-weight: bold; color: #000; font-size: large; font-family: Arial, Helvetica, sans-serif; letter-spacing: 2px; padding-left: 40px; margin-left: 40px;">ABOUT ZOMATO</h1>
+                <a href="#link">Who We Are</a><br>
+                <a href="#link">Blog</a><br>
+                <a href="#link">Work With Us</a><br>
+                <a href="#link">Investor Relations</a><br>
+                <a href="#link">Report Fraud</a><br>
+                <a href="#link">Press Kit</a><br>
+                <a href="#link">Contact Us</a><br>
+            </div>
+    
+            <div class="column1" id="column1">
+                <h1 style="font-weight: bold; color: #000; font-size: large; font-family: Arial, Helvetica, sans-serif; letter-spacing: 2px; padding-left: 40px; margin-left: 40px;">ZOMAVERSE</h1>
+                <a href="#link">Zomato</a><br>
+                <a href="#link">Blinkit</a><br>
+                <a href="#link">Feeding India</a><br>
+                <a href="#link">Hyperpure</a><br>
+                <a href="#link">Zomaland</a><br>
+                <a href="#link">Weather Union</a><br>
+            </div>
+
+            <div class="column1" id="column1">
+                <h1 style="font-weight: bold; color: #000; font-size: large; font-family: Arial, Helvetica, sans-serif; letter-spacing: 2px; padding-left: 40px; margin-left: 40px;">FOR RESTAURANTS</h1>
+                <a href="#link">Partners With Us</a><br>
+                <a href="#link">Apps For You</a><br>
+            </div>
+
+            <div class="column1" id="column1">
+                <h1 style="font-weight: bold; color: #000; font-size: large; font-family: Arial, Helvetica, sans-serif; letter-spacing: 2px; padding-left: 40px; margin-left: 40px;">LEARN MORE</h1>
+                <a href="#link">Privacy</a><br>
+                <a href="#link">Security</a><br>
+                <a href="#link">Terms</a><br>
+                <a href="#link">Sitemaps</a><br>
+            </div>
+
+            <div class="column1" id="column1">
+                <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 100;">SOCIAL LINKS</h2>
+                <div class="socialmedialink">
+                    <a href="https://www.facebook.com/zomato/"><img src="./icons8-facebook-24.png" alt=""></a><br>
+                    <a href="https://www.instagram.com/zomato/?hl=en"><img src="./icons8-instagram-24.png" alt=""></a><br>
+                    <a href="https://www.linkedin.com/company/zomato/?originalSubdomain=in"><img src="./icons8-linkedin-24.png" alt=""></a><br>
+                    <a href="https://in.pinterest.com/zomato/"><img src="./icons8-pinterest-24.png" alt=""></a><br>
+                    <a href="https://telegram.me/s/Free_zomato_food?before=133"><img src="./icons8-telegram-app-24.png" alt=""></a><br>
+                    <a href="https://x.com/zomato?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="./icons8-twitter-24.png" alt=""></a><br>
+                </div>
+                <br>
+                <a href="#link"><img src="./Screenshot 2024-06-25 122335.png" alt="" style="text-align: center; border-radius: 10px; margin-left: 20PX;"></a>
+                <br>
+                <a href="https://play.google.com/store/apps/details?id=com.application.zomato&hl=en_IN&pli=1"><img src="./Screenshot 2024-06-25 122347.png" alt="" style="text-align: center; border-radius: 10px; margin-left: 20px;"></a>
+            </div>
+        </div>
+
+        <hr style="color: #757575; width: 1370px; height: 2px;">
+        <p style="color: #757575; font-size: 14px; padding-left: 100px; padding-right: 100px; padding-bottom: 20px;">By continuing past this page, you agree to our Terms of Services, Cookie Policy, Privacy Policy and Content Ploicies. All trademarks are properties of their respective owners. 2008-2024 &copy; Zomato &trade; LTD. All rights reserves.</p>
+    </div>
+</body>
+</html>
